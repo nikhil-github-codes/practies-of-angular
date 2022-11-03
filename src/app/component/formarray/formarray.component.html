@@ -1,0 +1,39 @@
+<form [formGroup]="form" (ngSubmit)="save()">
+<div class="row">
+    <div class="col-md-6">
+        <input formControlName="name"  type="text">
+    </div>
+    
+</div>
+
+<div class="row" formArrayName="adress">
+  <!-- <div *ngFor="let skill of form.add('adress').controls; let index as i>
+    <div class="col-md-6" [formGroupName]="i">
+        <input type="text">
+        <input type="text">
+    </div>
+  </div> -->
+
+  <div *ngFor="let skill of add().controls; let i = index " >
+    <!-- <div *ngFor= "let textGroup of  add().controls; let i = index"  [formGroupName]="i"> -->
+    <div [formGroupName]="i">
+      {{ i }}
+      city :
+      <input type="text" formControlName="city" />
+      country:
+      <input type="text" formControlName="country" />
+
+      <button (click)="remove(i)">Remove</button>
+    </div>
+  </div> -->
+</div>
+
+<div class="col-md-6">
+    <button (click)="addadress()">add</button>
+</div>
+
+
+<button type="submit">Submit</button>
+</form>
+
+

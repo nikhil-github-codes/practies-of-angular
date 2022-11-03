@@ -1,0 +1,57 @@
+<div class="row">
+    <input type="text"(keyup.enter)="product(val.value)"  #val>
+</div>
+
+
+<!-- <div class="row">
+    <div class="col-md-7 ">
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">moblie</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a routerLink="mobile"  class="btn btn-success">Go somewhere</a>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">laptop</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a routerLink="laptop" class="btn btn-success">Go somewhere</a>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">tv</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a routerLink="tv" class="btn btn-success">Go somewhere</a>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">washing machine</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a routerLink="washing-machine"  class="btn btn-success">Go somewhere</a>
+            </div>
+          </div>
+    </div>
+</div>
+
+ <div class="row">
+    <div class="col-md-8">
+
+    </div>
+    <div class="col-md-4">
+        <router-outlet></router-outlet>
+    </div> 
+      
+</div>  -->
+
+<div class="col-md-4">
+    <app-laptop [productall]="productp" (devpro)="removepro($event)"></app-laptop>
+ </div>
+
+ <!-- you deleted {{deletedpro}} -->

@@ -1,0 +1,118 @@
+<form [formGroup]="form" (ngSubmit)="save()">
+
+ <div class="container">
+    <div class="row mb-5">
+        <div class="col-md-8">
+            <input type="text" placeholder="name" formControlName="name">
+            <!-- <small class="alert alert-danger" *ngIf="!form.get('name')?.valid">
+                Firstname is required
+            </small> ----->
+            <div class="text-danger" *ngIf="!form.get('name')?.valid && form.get('name')?.touched "  >
+               Name is required
+              </div>
+
+        </div>
+    </div>
+    <div class="row mb-5">
+        <div class="col-md-8">
+            <input type="text" placeholder="email" formControlName="email">
+            <div class="text-danger" *ngIf="!form.get('email')?.valid && form.get('email')?.touched">
+             Email is required
+            </div>
+        </div>
+    </div>
+    <div class="row mb-5">
+        <div class="col-md-8">
+            <input type="text" placeholder="password" formControlName="password">
+            <div class="text-danger"*ngIf="!form.get('password')?.valid && form.get('password')?.touched">
+              <!-- Please enter password ------>
+                <div class="text-danger" *ngIf="!form.get('password')?.errors?.['required']">
+                  <!-- Please enter password ------->
+                  password must be 7 digit.it contain uppercase,lowercase number
+                  & symbol
+                </div>
+                <div class="text-danger" *ngIf="!form.get('password')?.errors?.['pattern']">
+                  <!-- password must be 7 digit.it contain uppercase,lowercase number
+                  & symbol ------>
+                  Please enter password
+                </div>
+              </div>
+        </div>
+    </div>
+
+
+      
+
+    <div class="row mb-5">
+        <div class="col-md-8">
+            <input type="text" placeholder="confirm password" formControlName="confirmPassword">
+            <div class="text-danger" *ngIf="!form.get('confirmPassword')?.valid && form.get('confirmPassword')?.touched">
+               
+                  <div class="text-danger" *ngIf="!form.get('confirmPassword')?.errors?.['required']">
+                    <!-- Please enter confirm password ---->
+                    Passwords must match
+                  </div>
+                  <div class="text-danger" *ngIf="!form.get('confirmPassword')?.errors?.['passvalidators']">
+                    <!-- Passwords must match ------>
+                    Please enter confirm password
+                  </div>
+                  <!-- <div *ngIf="form.get('').errors.confirmPasswordValidator">Passsword and
+                    Confirm Password didn't match. </div>
+                </div> ---->
+                </div>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-md-8">
+           <button>Submit</button>
+        </div>
+    </div>
+
+
+ </div>
+
+</form>
+
+
+
+
+<!-- 
+<form [formGroup]="form" (ngSubmit)="save()">
+
+  <div class="form-group">
+		<label for="name">Name</label>
+		<input type="text" class="form-control" formControlName="name">
+		<div *ngIf="submitted && form.get('name')?.errors" class="alert alert-danger">
+			<div *ngIf="form.get('name')?.errors?.['required']">Name is required</div>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label for="name">Email</label>
+		<input type="text" class="form-control" formControlName="email">
+		<div *ngIf="submitted && form.get('email')?.errors" class="alert alert-danger">
+			<div *ngIf="form.get('email')?.errors?.['required']">Email is required</div>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label for="name">Password</label>
+		<input type="password" class="form-control" formControlName="password">
+		<div *ngIf="submitted && form.get('password')?.errors" class="alert alert-danger">
+			<div *ngIf="form.get('password')?.errors?.['required']">Password is required</div>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label for="name">Confirm Password</label>
+		<input type="password" class="form-control" formControlName="confirmPassword">
+		<div *ngIf="submitted && form.get('confirmPassword')?.errors" class="alert alert-danger">
+			<div *ngIf="form.get('confirmPassword')?.errors?.['required']">Confirm Password is required</div>
+
+			<div *ngIf="form.get('confirmPassword')?.errors?.['validator']">Passsword and
+				Confirm Password didn't match. </div>
+		</div>
+	</div>
+	<button type="submit" class="btn btn-success">Submit</button>
+</form> -->
